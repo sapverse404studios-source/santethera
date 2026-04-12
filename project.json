@@ -1,0 +1,23 @@
+{
+  "overview": "A premium, responsive wellness website for SanteThera — a door-to-door massage therapy service. Features an elegant pink/magenta/purple design with glassmorphism effects, smooth Framer Motion animations, 4 pages (Home, Services, About, Booking), and WhatsApp-integrated appointment booking.",
+  "features": [
+    "Home page with hero, service highlights, testimonials, and CTA",
+    "Services page with 4 detailed therapy cards and pricing",
+    "About page with therapist story and split-section layout",
+    "Glassmorphism booking form with WhatsApp redirect",
+    "Floating WhatsApp button with pulse animation on all pages",
+    "Scroll-triggered animations and parallax effects",
+    "Mobile-first responsive design with sticky navbar"
+  ],
+  "category": "wellness",
+  "tags": [
+    "wellness",
+    "massage",
+    "therapy",
+    "booking",
+    "whatsapp",
+    "responsive",
+    "animations"
+  ],
+  "last_updated": "2026-04-12T05:38:30.828Z"
+}
