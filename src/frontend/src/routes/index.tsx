@@ -145,6 +145,24 @@ function HomePage() {
             transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
             className="max-w-2xl"
           >
+            {/* Logo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1, duration: 0.6 }}
+              className="mb-6"
+            >
+              <img
+                src="/assets/logo.webp"
+                alt="SanteThera"
+                className="h-16 w-auto object-contain"
+                style={{
+                  filter:
+                    "brightness(0) invert(1) drop-shadow(0 2px 14px rgba(255,255,255,0.25))",
+                }}
+              />
+            </motion.div>
+
             {/* Eyebrow badge */}
             <motion.span
               initial={{ opacity: 0, scale: 0.9 }}
@@ -370,6 +388,78 @@ function HomePage() {
 
           <TestimonialsCarousel />
         </div>
+      </section>
+
+      {/* ── Wellness Gallery ──────────────────────────────────── */}
+      <section className="py-20 section-alt overflow-hidden">
+        <WaveDivider color="oklch(0.97 0.02 320)" flip />
+        <div className="container mx-auto px-4 pt-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <span className="text-primary text-sm font-semibold uppercase tracking-widest">
+              The SanteThera Life
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mt-2 mb-4 text-foreground">
+              Wellness <span className="text-gradient">at Your Doorstep</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {[
+              {
+                src: "/assets/generated/home-wellness-1.dim_800x600.jpg",
+                title: "Serene Spa Experience",
+                caption:
+                  "Relax, restore, and rejuvenate in the comfort of your space",
+              },
+              {
+                src: "/assets/generated/home-wellness-2.dim_800x600.jpg",
+                title: "Door-to-Door Service",
+                caption:
+                  "Professional equipment, oils, and care brought to you",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={item.src}
+                initial={{ opacity: 0, y: 28, x: i === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.65,
+                  delay: i * 0.15,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="relative rounded-3xl overflow-hidden shadow-elevated group"
+              >
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className="w-full object-cover transition-smooth group-hover:scale-105"
+                  style={{ height: "320px" }}
+                />
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background:
+                      "linear-gradient(to top, oklch(0.15 0.06 330 / 0.75) 0%, transparent 55%)",
+                  }}
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="font-display text-xl font-bold text-white mb-1">
+                    {item.title}
+                  </h3>
+                  <p className="text-white/75 text-sm">{item.caption}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        <WaveDivider color="oklch(0.98 0.01 320)" />
       </section>
 
       {/* ── CTA Banner ───────────────────────────────────────── */}

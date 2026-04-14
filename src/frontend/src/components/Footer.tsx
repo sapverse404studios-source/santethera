@@ -1,12 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import {
-  Facebook,
-  Instagram,
-  Mail,
-  MapPin,
-  Phone,
-  Sparkles,
-} from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { WaveDivider } from "./WaveDivider";
 
@@ -27,12 +20,12 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-10 h-10 rounded-full gradient-glow flex items-center justify-center">
-                <Sparkles size={18} className="text-white" />
-              </div>
-              <span className="font-display text-2xl font-bold text-white tracking-wide">
-                SanteThera
-              </span>
+              <img
+                src="/assets/logo.webp"
+                alt="SanteThera"
+                className="h-12 w-auto object-contain"
+                style={{ filter: "brightness(0) invert(1) opacity(0.9)" }}
+              />
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-5">
               Premium door-to-door massage therapy bringing certified healing to

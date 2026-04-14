@@ -130,70 +130,144 @@ function ContactPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-32 pb-4 overflow-hidden section-alt">
-        {/* Decorative blobs */}
+      {/* Hero with background image */}
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+        {/* Background image */}
+        <motion.div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('/assets/generated/booking-hero-bg.dim_1600x900.jpg')",
+          }}
+          initial={{ scale: 1.08 }}
+          animate={{ scale: 1.02 }}
+          transition={{ duration: 10, ease: "easeOut" }}
+        />
+        {/* Gradient overlay — warm pink-gold */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(160deg, oklch(0.20 0.10 330 / 0.88) 0%, oklch(0.24 0.10 295 / 0.78) 55%, oklch(0.22 0.08 50 / 0.65) 100%)",
+          }}
+        />
+
+        {/* Floating decorative elements */}
         <div
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none overflow-hidden"
         >
-          <div
-            className="absolute -top-24 right-0 w-[420px] h-[420px] rounded-full opacity-20 blur-3xl"
-            style={{
-              background:
-                "radial-gradient(circle, oklch(0.75 0.18 330), transparent)",
+          <motion.div
+            animate={{ y: [0, -16, 0], x: [0, 8, 0] }}
+            transition={{
+              duration: 7,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
             }}
+            className="absolute top-24 left-8 w-40 h-40 rounded-full opacity-15"
+            style={{ background: "oklch(0.82 0.12 330)" }}
           />
-          <div
-            className="absolute bottom-0 left-10 w-[300px] h-[300px] rounded-full opacity-10 blur-3xl"
-            style={{
-              background:
-                "radial-gradient(circle, oklch(0.68 0.18 280), transparent)",
+          <motion.div
+            animate={{ y: [0, 14, 0] }}
+            transition={{
+              duration: 8,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+              delay: 2,
             }}
+            className="absolute bottom-16 right-10 w-32 h-32 rounded-full opacity-12"
+            style={{ background: "oklch(0.80 0.14 58)" }}
           />
-          {/* Floating leaf */}
-          <svg
+          {/* Animated leaf shapes */}
+          <motion.svg
             aria-hidden="true"
-            className="absolute top-28 left-12 opacity-20 animate-float-slow"
+            className="absolute top-28 right-16 opacity-20"
             width="48"
             height="60"
             viewBox="0 0 48 60"
             fill="none"
-          >
-            <path
-              d="M24 2C24 2 44 16 44 34C44 47 35 56 24 58C13 56 4 47 4 34C4 16 24 2 24 2Z"
-              fill="oklch(0.58 0.23 330)"
-            />
-          </svg>
-          <svg
-            aria-hidden="true"
-            className="absolute top-48 right-20 opacity-15 animate-float-slow"
-            width="32"
-            height="40"
-            viewBox="0 0 48 60"
-            fill="none"
-            style={{ animationDelay: "1.5s" }}
+            animate={{ y: [0, -10, 0], rotate: [0, 6, 0] }}
+            transition={{
+              duration: 6,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+            }}
           >
             <path
               d="M24 2C24 2 44 16 44 34C44 47 35 56 24 58C13 56 4 47 4 34C4 16 24 2 24 2Z"
               fill="oklch(0.74 0.18 58)"
             />
-          </svg>
+          </motion.svg>
+          <motion.svg
+            aria-hidden="true"
+            className="absolute bottom-24 left-16 opacity-15"
+            width="36"
+            height="45"
+            viewBox="0 0 48 60"
+            fill="none"
+            animate={{ y: [0, 8, 0], rotate: [0, -5, 0] }}
+            transition={{
+              duration: 7,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+              delay: 1.5,
+            }}
+          >
+            <path
+              d="M24 2C24 2 44 16 44 34C44 47 35 56 24 58C13 56 4 47 4 34C4 16 24 2 24 2Z"
+              fill="oklch(0.85 0.10 330)"
+            />
+          </motion.svg>
         </div>
 
-        <div className="container mx-auto px-4 text-center relative py-12">
+        <div className="relative container mx-auto px-4 py-32 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="inline-flex items-center gap-1.5 text-primary text-xs font-semibold uppercase tracking-[0.18em] mb-4">
-              <Sparkles size={13} /> Get in Touch
-            </span>
-            <h1 className="font-display text-5xl md:text-6xl font-bold mt-2 mb-5 text-foreground leading-tight">
-              Book <span className="text-gradient">Your Session</span>
+            {/* Logo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1, duration: 0.6 }}
+              className="flex justify-center mb-6"
+            >
+              <img
+                src="/assets/logo.webp"
+                alt="SanteThera"
+                className="h-12 w-auto object-contain"
+                style={{
+                  filter:
+                    "brightness(0) invert(1) drop-shadow(0 2px 10px rgba(255,255,255,0.25))",
+                }}
+              />
+            </motion.div>
+
+            <motion.span
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="inline-flex items-center gap-1.5 glass-dark px-4 py-2 rounded-full text-white/90 text-xs font-semibold uppercase tracking-[0.18em] mb-5"
+            >
+              <Sparkles size={13} /> Begin Your Journey
+            </motion.span>
+
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mt-2 mb-5 text-white leading-tight">
+              Book{" "}
+              <span
+                style={{
+                  background:
+                    "linear-gradient(90deg, oklch(0.90 0.10 330), oklch(0.82 0.16 60))",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Your Session
+              </span>
             </h1>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto leading-relaxed">
+            <p className="text-white/80 text-lg md:text-xl max-w-xl mx-auto leading-relaxed">
               Fill in the details below and we'll confirm your appointment via
               WhatsApp within minutes.
             </p>

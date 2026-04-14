@@ -1,5 +1,5 @@
 import { Link, useRouter } from "@tanstack/react-router";
-import { Menu, Sparkles, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navLinks = [
@@ -25,22 +25,22 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
-        scrolled ? "glass-soft shadow-wellness py-3" : "bg-transparent py-5"
+        scrolled ? "glass-soft shadow-wellness py-2" : "bg-transparent py-4"
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Brand */}
+        {/* Brand with logo */}
         <Link
           to="/"
           className="flex items-center gap-2.5 group"
           data-ocid="nav-brand"
         >
-          <div className="w-9 h-9 rounded-full gradient-glow flex items-center justify-center shadow-wellness">
-            <Sparkles className="w-4.5 h-4.5 text-white" size={18} />
-          </div>
-          <span className="font-display text-xl font-bold text-gradient tracking-wide">
-            SanteThera
-          </span>
+          <img
+            src="/assets/logo.webp"
+            alt="SanteThera logo"
+            className="h-12 w-auto object-contain drop-shadow-md transition-smooth group-hover:scale-105"
+            style={{ maxWidth: "160px" }}
+          />
         </Link>
 
         {/* Desktop nav */}

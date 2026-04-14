@@ -91,6 +91,24 @@ function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
+            {/* Logo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1, duration: 0.6 }}
+              className="flex justify-center mb-6"
+            >
+              <img
+                src="/assets/logo.webp"
+                alt="SanteThera"
+                className="h-14 w-auto object-contain"
+                style={{
+                  filter:
+                    "brightness(0) invert(1) drop-shadow(0 2px 12px rgba(255,255,255,0.3))",
+                }}
+              />
+            </motion.div>
+
             <span
               className="inline-block text-sm font-semibold uppercase tracking-widest mb-4 px-4 py-1.5 rounded-full"
               style={{
@@ -198,20 +216,38 @@ function AboutPage() {
               {...fadeUp(0.15)}
               className="order-1 lg:order-2 relative"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-elevated">
-                <img
-                  src="/assets/generated/about-story-bg.dim_1200x700.jpg"
-                  alt="SanteThera wellness sanctuary"
-                  className="w-full object-cover"
-                  style={{ maxHeight: "480px" }}
-                />
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(to top, oklch(0.58 0.23 330 / 0.12), transparent)",
-                  }}
-                />
+              <div className="grid grid-cols-2 gap-3">
+                <div className="relative rounded-3xl overflow-hidden shadow-elevated col-span-2">
+                  <img
+                    src="/assets/generated/about-story-bg.dim_1200x700.jpg"
+                    alt="SanteThera wellness sanctuary"
+                    className="w-full object-cover"
+                    style={{ maxHeight: "320px" }}
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(to top, oklch(0.58 0.23 330 / 0.12), transparent)",
+                    }}
+                  />
+                </div>
+                <div className="relative rounded-2xl overflow-hidden shadow-elevated">
+                  <img
+                    src="/assets/generated/about-massage-2.dim_800x600.jpg"
+                    alt="SanteThera therapist at work"
+                    className="w-full object-cover"
+                    style={{ height: "180px" }}
+                  />
+                </div>
+                <div className="relative rounded-2xl overflow-hidden shadow-elevated">
+                  <img
+                    src="/assets/generated/home-wellness-1.dim_800x600.jpg"
+                    alt="Wellness relaxation experience"
+                    className="w-full object-cover"
+                    style={{ height: "180px" }}
+                  />
+                </div>
               </div>
               {/* Decorative accent */}
               <div

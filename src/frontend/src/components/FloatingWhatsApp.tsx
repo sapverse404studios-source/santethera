@@ -1,6 +1,6 @@
 import { SiWhatsapp } from "react-icons/si";
 
-const WHATSAPP_NUMBER = "919999999999";
+const WHATSAPP_NUMBER = "919876543210";
 const WHATSAPP_MSG = encodeURIComponent(
   "Hello SanteThera! I'd like to book a therapy session.",
 );

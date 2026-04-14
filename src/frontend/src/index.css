@@ -266,12 +266,24 @@
   @media (prefers-reduced-motion: reduce) {
     .animate-float,
     .animate-pulse-soft,
+    .animate-pulse-ring,
     .animate-fade-in,
     .animate-fade-in-up {
       animation: none;
     }
     .transition-smooth {
       transition: none;
+    }
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.6);
+      opacity: 0;
     }
   }
 }
